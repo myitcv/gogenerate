@@ -10,32 +10,6 @@ import (
 	"testing"
 )
 
-func TestCommentRegexp(t *testing.T) {
-	comm := "banana"
-	r, err := commentRegex(comm)
-	if err != nil {
-		t.Fatalf("Expected call to result in no error")
-	}
-
-	checks := []struct {
-		s string
-		r bool
-	}{
-		{GoGeneratePrefix + " " + comm, true},
-		{GoGeneratePrefix + " " + comm + " ", true},
-		{GoGeneratePrefix + " " + comm + "  some arguments\n", true},
-		{GoGeneratePrefix + " " + comm + "\t", false},
-		{GoGeneratePrefix + " " + comm + "\t", false},
-	}
-
-	for _, c := range checks {
-		v := r.MatchString(c.s)
-		if v != c.r {
-			t.Errorf("commentRegex /%v/.MatchString(%q) does not equal %v", r, c.s, c.r)
-		}
-	}
-}
-
 func TestFilesContaining(t *testing.T) {
 	cwd, err := os.Getwd()
 	if err != nil {
