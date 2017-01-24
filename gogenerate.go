@@ -137,13 +137,13 @@ func LicenseFileFlag() *string {
 // if a filename is provided it reads the contents of the file and returns a line-commented transformation
 // of the contents with a final blank newline
 func CommentLicenseHeader(file *string) (string, error) {
-	if file == nil {
+	if file == nil || *file == "" {
 		return "", nil
 	}
 
 	fi, err := os.Open(*file)
 	if err != nil {
-		return "", fmt.Errorf("could not open file %v: %v", *file, err)
+		return "", fmt.Errorf("could not open file %q: %v", *file, err)
 	}
 
 	res := bytes.NewBuffer(nil)
