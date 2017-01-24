@@ -130,7 +130,7 @@ func LogFlag() *string {
 // LicenseFileFlag defines a command line string flag named according to the constant
 // FlagLicenseFile and returns a pointer ot the string that flag set
 func LicenseFileFlag() *string {
-	return flag.String(FlagLicenseFile, string(LogFatal), "file that contains a license header to be inserted at the top of each generated file")
+	return flag.String(FlagLicenseFile, "", "file that contains a license header to be inserted at the top of each generated file")
 }
 
 // CommentLicenseHeader is a convenience function to be used in conjunction with LicenseFileFlag;
