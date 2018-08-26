@@ -1,12 +1,7 @@
-### `myitcv.io/gogenerate`
+## `** myitcv.io/gogenerate **` has moved
 
-```
-go get -u myitcv.io/gogenerate
-```
+The repository hosting `myitcv.io/gogenerate` has changed.
 
-Package gogenerate exposes some of the unexported internals of the go generate command as a convenience
-for the authors of go generate generators. See https://github.com/myitcv/gogenerate/wiki/Go-Generate-Notes
-for further notes on such generators. It also exposes some convenience functions that might be useful
-to authors of generators.
+`myitcv.io/gogenerate` can now be found at:
 
-See [the `godoc`'s](https://godoc.org/myitcv.io/gogenerate)
+https://github.com/myitcv/x/tree/master/gogenerate
